@@ -116,7 +116,6 @@ public class Main {
         }
     }
 
-
     public static void settings() {
         boolean running = true;
 

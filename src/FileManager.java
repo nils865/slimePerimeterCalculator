@@ -11,7 +11,7 @@ public class FileManager {
         try {
             String dt = getDateTime();
 
-            File f = new File(name + "_" + dt + ".txt");
+            File f = new File(name + "_" + dt + ".scf");
 
             if (f.createNewFile()) {
                 return f;
