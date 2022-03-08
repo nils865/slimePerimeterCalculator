@@ -14,6 +14,8 @@ public class MultiThread implements Runnable {
     private ArrayList<ArrayList<Boolean>> slimeChunkList;
     // Status of the thread
     private boolean dead;
+    // List of perimeters with same amount
+    private ArrayList<int[]> allMaxSlimeChunks;
 
     /**
      * Constructor
@@ -134,6 +136,17 @@ public class MultiThread implements Runnable {
             this.maxSlimeChunks[1] = (xPos - 16);
             this.maxSlimeChunks[2] = zPos;
             System.out.println(Colors.reset + "New max with " + Colors.cyan + currentSlimeChunkCount + Colors.reset + " at X: " + Colors.cyan + this.maxSlimeChunks[1] + Colors.reset + " Z: " + Colors.cyan + this.maxSlimeChunks[2] + Colors.reset + " --- " + Colors.cyan + this.threadName + Colors.reset);
+
+            ArrayList<int[]> empty = new ArrayList<>();
+            allMaxSlimeChunks = empty;
+        }
+
+        if(currentSlimeChunkCount == this.maxSlimeChunks[0] && currentSlimeChunkCount > 50) {
+            int[] currentChunk = {currentSlimeChunkCount, (xPos - 16), zPos};
+
+            this.allMaxSlimeChunks.add(currentChunk);
+
+            System.out.println(Colors.reset + "New same as max with " + Colors.cyan + currentSlimeChunkCount + Colors.reset + " at X: " + Colors.cyan + this.maxSlimeChunks[1] + Colors.reset + " Z: " + Colors.cyan + this.maxSlimeChunks[2] + Colors.reset + " --- " + Colors.cyan + this.threadName + Colors.reset);
         }
     }
 
@@ -159,5 +172,9 @@ public class MultiThread implements Runnable {
 
     public String getThreadName() {
         return this.threadName;
+    }
+
+    public ArrayList<int[]> getAllMax() {
+        return this.allMaxSlimeChunks;
     }
 }

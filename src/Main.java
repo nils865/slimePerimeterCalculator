@@ -1,3 +1,6 @@
+import java.io.File;
+import java.util.ArrayList;
+
 public class Main {
     // World Seed
     private static long seed;
@@ -78,14 +81,41 @@ public class Main {
             if(mT1.isDead() && mT2.isDead() && mT3.isDead() && mT4.isDead()) {
                 running = false;
             }
-
+            
             System.out.print("");
         }
-
+        
         endTime = System.currentTimeMillis();
         System.out.println("This took " + (endTime - startTime) + " ms or " + ((endTime - startTime) / 1000) + " s to calculate");
-
+        
+        finalOutput();
     }
+
+    /**
+     * Final Output
+     */
+    private static void finalOutput() {
+        System.out.println("\n-----------------------");
+
+        MultiThread[] maximums = {mT1, mT2, mT3, mT4};
+
+        File f = FileManager.createFile("SlimeChunks");
+
+        for (int i = 0; i < maximums.length; i++) {
+            ArrayList<int[]> mT = maximums[i].getAllMax();
+    
+            for (int j = 0; j < mT.size(); j++) {
+                String str = (mT.get(j)[0] + " Slime Chunks at X: " + mT.get(j)[1] + " Z: " + mT.get(j)[2] + " --- " + maximums[i].getThreadName());
+
+                System.out.println(str);
+
+                String oldFileText = FileManager.readFile(f);
+
+                FileManager.writeToFile(f.getName(), (oldFileText + str + "\n"));
+            }
+        }
+    }
+
 
     public static void settings() {
         boolean running = true;
