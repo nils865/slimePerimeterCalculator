@@ -1,6 +1,7 @@
 ## Slime Chunk Finder
 This searches for the best place to build a Slime Farm with a given Seed Radius
-\nOutputs in a custom .scf file, just like a text file
+
+Outputs in a custom .scf file, just like a text file
 
 ## Arguments
 - `Color` `true` or `false` enables the colored output
