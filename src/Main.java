@@ -22,7 +22,6 @@ public class Main {
         fancyAsciiArt();
 
         // Get seed from Console Input
-        System.out.println("-2049756595");
         System.out.print("Seed: ");
         seed = Long.parseLong(System.console().readLine());
 
