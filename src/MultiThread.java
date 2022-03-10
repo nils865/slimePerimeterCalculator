@@ -102,7 +102,6 @@ public class MultiThread implements Runnable {
         for (int z = this.zStart; z < this.zEnd; z++) {
             this.currentZ = z;
 
-            this.updateDiscordRP(x, z);
 
             int currentZArraySize = this.slimeChunkList.get((this.slimeChunkList.size() - 1)).size();
 
@@ -149,6 +148,8 @@ public class MultiThread implements Runnable {
             this.allMaxSlimeChunks.add(currentChunk);
 
             System.out.println(Colors.reset + "New same as max with " + Colors.cyan + currentSlimeChunkCount + Colors.reset + " at X: " + Colors.cyan + this.maxSlimeChunks[1] + Colors.reset + " Z: " + Colors.cyan + this.maxSlimeChunks[2] + Colors.reset + " --- " + Colors.cyan + this.threadName + Colors.reset);
+
+            this.updateDiscordRP(this.maxSlimeChunks[0], this.maxSlimeChunks[1], this.maxSlimeChunks[2]);
         }
     }
 
@@ -157,9 +158,9 @@ public class MultiThread implements Runnable {
      * @param xPos
      * @param zPos
      */
-    private void updateDiscordRP(int xPos, int zPos) {
+    private void updateDiscordRP(int maxCount, int xPos, int zPos) {
         if(this.threadName.equals("Thread-3")) {
-            String str = "Currently at X: " + xPos + " Z: " + zPos;
+            String str = "Best Perimeter with " + maxCount + " Slime Chunks at X: " + xPos + " Z: " + zPos;
             Main.getDiscordRP().updateDetails(str);
         }
     }
