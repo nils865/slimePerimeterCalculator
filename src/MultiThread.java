@@ -158,8 +158,10 @@ public class MultiThread implements Runnable {
      * @param zPos
      */
     private void updateDiscordRP(int xPos, int zPos) {
-        String str = "Currently at X: " + xPos + " Z: " + zPos;
-        Main.getDiscordRP().updateDetails(str);
+        if(this.threadName.equals("Thread-3")) {
+            String str = "Currently at X: " + xPos + " Z: " + zPos;
+            Main.getDiscordRP().updateDetails(str);
+        }
     }
 
     /**
