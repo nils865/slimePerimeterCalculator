@@ -14,8 +14,6 @@ public class DiscordRP {
 
         this.handlers = new DiscordEventHandlers();
 
-        this.handlers.ready = (user) -> System.out.println("Ready!");
-
         this.lib.Discord_Initialize(this.applicationId, this.handlers, true, this.steamId);
 
         this.presence = new DiscordRichPresence();

@@ -12,6 +12,8 @@ public class Main {
     private static Thread t1, t2, t3, t4;
     // Settings
     private static int updateTimeInMS;
+    // DiscordRP
+    private static DiscordRP rp;
 
     /**
      * Main method of the project
@@ -20,6 +22,10 @@ public class Main {
     public static void main(String[] args) {
         // Show ascii art banner
         fancyAsciiArt();
+
+        // Start DiscordRP
+        rp = new DiscordRP();
+        rp.updateDetails("Started SlimeChunkFinder");
 
         // Get seed from Console Input
         System.out.print("Seed: ");
@@ -167,7 +173,8 @@ public class Main {
         System.out.println(Colors.reset);
     }
     
-    // Getter for Seed and Radus
+    // Getter for Seed, Radus and DiscordRP
     public static long getSeed() { return seed; }
     public static int getRadius() { return radius; }
+    public static DiscordRP getDiscordRP() { return rp; }
 }

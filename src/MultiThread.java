@@ -102,6 +102,8 @@ public class MultiThread implements Runnable {
         for (int z = this.zStart; z < this.zEnd; z++) {
             this.currentZ = z;
 
+            this.updateDiscordRP(x, z);
+
             int currentZArraySize = this.slimeChunkList.get((this.slimeChunkList.size() - 1)).size();
 
             this.slimeChunkList.get((this.slimeChunkList.size() - 1)).add(this.getSlimeChunk(x, z));
@@ -148,6 +150,16 @@ public class MultiThread implements Runnable {
 
             System.out.println(Colors.reset + "New same as max with " + Colors.cyan + currentSlimeChunkCount + Colors.reset + " at X: " + Colors.cyan + this.maxSlimeChunks[1] + Colors.reset + " Z: " + Colors.cyan + this.maxSlimeChunks[2] + Colors.reset + " --- " + Colors.cyan + this.threadName + Colors.reset);
         }
+    }
+
+    /**
+     * Updates the DiscordRP
+     * @param xPos
+     * @param zPos
+     */
+    private void updateDiscordRP(int xPos, int zPos) {
+        String str = "Currently at X: " + xPos + " Z: " + zPos;
+        Main.getDiscordRP().updateDetails(str);
     }
 
     /**
