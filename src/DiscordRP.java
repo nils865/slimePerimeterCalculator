@@ -20,6 +20,7 @@ public class DiscordRP {
         this.presence.startTimestamp = System.currentTimeMillis() / 1000; // epoch second
 
         this.presence.details = "Testing RPC";
+        this.presence.state = "Cool Slime Chunks";
         this.lib.Discord_UpdatePresence(presence);
 
         this.start();
@@ -38,6 +39,11 @@ public class DiscordRP {
     }
 
     public void updateDetails(String details) {
+        this.presence.details = details;
+        this.lib.Discord_UpdatePresence(presence);
+    }
+
+    public void updateState(String details) {
         this.presence.details = details;
         this.lib.Discord_UpdatePresence(presence);
     }
