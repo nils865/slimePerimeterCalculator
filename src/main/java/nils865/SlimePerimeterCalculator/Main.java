@@ -1,4 +1,4 @@
-package nils865;
+package nils865.SlimePerimeterCalculator;
 
 import java.util.Scanner;
 import nils865.nilsColor.Color;

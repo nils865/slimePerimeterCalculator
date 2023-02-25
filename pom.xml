@@ -53,7 +53,7 @@
             <archive>
               <manifest>
                 <addClasspath>true</addClasspath>
-                <mainClass>nils865.Main</mainClass>
+                <mainClass>nils865.SlimePerimeterCalculator.Main</mainClass>
                 <classpathPrefix>dependency/</classpathPrefix>
               </manifest>
             </archive>

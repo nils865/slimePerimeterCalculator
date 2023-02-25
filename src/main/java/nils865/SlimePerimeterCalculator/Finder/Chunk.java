@@ -1,8 +1,8 @@
-package nils865.Finder;
+package nils865.SlimePerimeterCalculator.Finder;
 
 import java.util.Random;
 
-import nils865.Main;
+import nils865.SlimePerimeterCalculator.Main;
 
 public class Chunk {
     private final int x;
