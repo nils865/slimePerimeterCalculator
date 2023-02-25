@@ -8,7 +8,8 @@ import nils865.nilsColor.Color;
 public class Main {
     private static long seed;
     private static boolean debug = false;
-    private static final int perimeterSize = 16;
+
+    public static final int perimeterRadius = 8;
 
     public static long getSeed() {
         return Main.seed;
@@ -65,7 +66,7 @@ public class Main {
             scanner.close();
         }
 
-        FindPerimeters search = new FindPerimeters(10000);
+        FindPerimeters search = new FindPerimeters(1000);
 
         search.searchForSlimeChunks();
     }
