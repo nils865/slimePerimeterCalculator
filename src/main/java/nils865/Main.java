@@ -1,6 +1,7 @@
 package nils865;
 
 import java.util.Scanner;
+import nils865.nilsColor.Color;
 
 public class Main {
 
