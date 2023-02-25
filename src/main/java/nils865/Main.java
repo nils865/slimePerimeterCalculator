@@ -24,12 +24,14 @@ public class Main {
                     break;
             
                 default:
-                    System.out.println("Argument \"" + arg + "\" not found");
+                    System.out.println( Color.fg.red("Argument \"") +
+                                        Color.fg.cyan(arg) +
+                                        Color.fg.red("\" not found"));
                     return;
             }
         }
 
-        System.out.println("\nWelcome to the Slime Perimeter Calculator");
+        System.out.println("\nWelcome to the " + Color.fg.green("Slime Perimeter Calculator"));
         System.out.println("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n");
 
         if (!debug) {
