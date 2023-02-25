@@ -13,7 +13,7 @@ public class NumberFormatting {
 
             formattedNumber += digits[i];
 
-            if (digitCounter >= 3) {
+            if (digitCounter >= 3 && i > 0) {
                 formattedNumber += '.';
                 digitCounter = 0;
             }
