@@ -2,6 +2,8 @@ package nils865.Finder;
 
 import java.util.Random;
 
+import nils865.Main;
+
 public class Chunk {
     private final int x;
     private final int z;
@@ -11,11 +13,11 @@ public class Chunk {
         this.x = x;
         this.z = z;
 
-        this.slimeChunk = calcSlimeChunk(12345L);
+        this.slimeChunk = calcSlimeChunk();
     }
 
-    private boolean calcSlimeChunk(long seed) {
-        Random rnd = new Random(seed +
+    private boolean calcSlimeChunk() {
+        Random rnd = new Random(Main.getSeed() +
                 (long) (this.x * this.x * 0x4c1906) +
                 (long) (this.x * 0x5ac0db) +
                 (long) (this.z * this.z) * 0x4307a7L +
