@@ -1,12 +1,14 @@
 package nils865.SlimePerimeterCalculator;
 
 import java.util.Scanner;
+
+import nils865.SlimePerimeterCalculator.Finder.FindPerimeters;
 import nils865.nilsColor.Color;
 
 public class Main {
-
     private static long seed;
     private static boolean debug = false;
+    private static final int perimeterSize = 16;
 
     public static long getSeed() {
         return Main.seed;
@@ -63,6 +65,8 @@ public class Main {
             scanner.close();
         }
 
-        System.out.println("Hello World!");
+        FindPerimeters search = new FindPerimeters(10000);
+
+        search.searchForSlimeChunks();
     }
 }
