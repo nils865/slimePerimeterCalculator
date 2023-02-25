@@ -1,5 +1,7 @@
 package nils865.SlimePerimeterCalculator.Finder;
 
+import nils865.SlimePerimeterCalculator.Utils.NumberFormatting;
+
 public class FindPerimeters {
     private int radius;
 
@@ -20,7 +22,7 @@ public class FindPerimeters {
             }
         }
 
-        System.out.println("Slime Chunk Count: " + slimeChunkCount);
+        System.out.println("Slime Chunk Count: " + NumberFormatting.beautifyNumber(slimeChunkCount));
 
         return slimeChunkCount;
     }
