@@ -11,10 +11,10 @@ public class Chunk {
         this.x = x;
         this.z = z;
 
-        this.slimeChunk = isSlimeChunk(12345L);
+        this.slimeChunk = calcSlimeChunk(12345L);
     }
 
-    public boolean isSlimeChunk(long seed) {
+    private boolean calcSlimeChunk(long seed) {
         Random rnd = new Random(seed +
                 (long) (this.x * this.x * 0x4c1906) +
                 (long) (this.x * 0x5ac0db) +
@@ -22,5 +22,17 @@ public class Chunk {
                 (long) (this.z * 0x5f24f) ^ 0x3ad8025f);
     
         return rnd.nextInt(10) == 0;
+    }
+
+    public int getX() {
+        return this.x;
+    }
+
+    public int getZ() {
+        return this.z;
+    }
+
+    public boolean isSlimeChunk() {
+        return this.slimeChunk;
     }
 }
